@@ -12,7 +12,7 @@ export default function UserForm({ onUserAdded }) {
     e.preventDefault();
     setLoading(true);
     try {
-      await axios.post("/_/backend/api/users", {
+      await axios.post("/api/users", {
         ...form,
         age: Number(form.age),
       });

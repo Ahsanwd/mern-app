@@ -16,7 +16,7 @@ export default function EditModal({ user, onClose, onUpdated }) {
     e.preventDefault();
     setLoading(true);
     try {
-      await axios.put(`/_/backend/api/users/${user._id}`, {
+      await axios.put(`/api/users/${user._id}`, {
         ...form,
         age: Number(form.age),
       });

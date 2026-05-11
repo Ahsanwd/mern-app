@@ -11,7 +11,7 @@ export default function App() {
 
   const fetchUsers = async () => {
     try {
-      const res = await axios.get("/_/backend/api/users");
+      const res = await axios.get("/api/users");
       setUsers(res.data);
     } catch (err) {
       console.error(err.message);
@@ -25,7 +25,7 @@ export default function App() {
 
   const handleDelete = async (id) => {
     if (!confirm("Delete this user?")) return;
-    await axios.delete(`/_/backend/api/users/${id}`);
+    await axios.delete(`/api/users/${id}`);
     fetchUsers();
   };
 
