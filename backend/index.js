@@ -1,3 +1,4 @@
+require("dotenv").config();
 const express = require("express");
 const mongoose = require("mongoose");
 const cors = require("cors");
@@ -6,8 +7,7 @@ const app = express();
 app.use(cors());
 app.use(express.json());
 
-const URI =
-  "mongodb://ahsan123:ahsan123@ac-qk2dmh7-shard-00-00.0irvoce.mongodb.net:27017,ac-qk2dmh7-shard-00-01.0irvoce.mongodb.net:27017,ac-qk2dmh7-shard-00-02.0irvoce.mongodb.net:27017/mernappdb?ssl=true&replicaSet=atlas-uat3ni-shard-0&authSource=admin&retryWrites=true&w=majority";
+const URI = process.env.MONGO_URI;
 
 mongoose
   .connect(URI)
